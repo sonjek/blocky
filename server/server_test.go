@@ -836,7 +836,8 @@ var _ = Describe("Running DNS server", func() {
 })
 
 func requestServer(ctx context.Context, request *dns.Msg) *dns.Msg {
-	conn, err := (&net.Dialer{}).DialContext(ctx, "udp", GetHostPort("", dnsBasePort))
+	var d net.Dialer
+	conn, err := d.DialContext(ctx, "udp", GetHostPort("", dnsBasePort))
 	if err != nil {
 		Log().Fatal("could not connect to server: ", err)
 	}

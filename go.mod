@@ -1,6 +1,6 @@
 module github.com/0xERR0R/blocky
 
-go 1.25
+go 1.26.0
 
 require (
 	github.com/0xERR0R/expiration-cache v0.1.0
